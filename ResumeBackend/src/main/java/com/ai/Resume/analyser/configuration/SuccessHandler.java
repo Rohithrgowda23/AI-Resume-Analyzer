@@ -51,7 +51,7 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
         String token = jwtService.generateToken(email);
 
         response.sendRedirect(
-                "http://localhost:5173/?token=" + token
+                "https://rohith-ai-resume.vercel.app/?token=" + token
         );
     }
 }

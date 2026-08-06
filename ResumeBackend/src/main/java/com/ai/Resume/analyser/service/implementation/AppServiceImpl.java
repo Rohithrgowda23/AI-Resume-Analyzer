@@ -66,10 +66,8 @@ public class AppServiceImpl implements AppService {
     private final UsersTableRepo usersTableRepository;
     private final PrevTableRepo previousTableRepo;
 
-    // Bound the retry loop instead of looping forever on persistent failures.
     private static final int MAX_GEMINI_ATTEMPTS = 3;
 
-    // Cap job description length sent to the LLM (cost / token control).
     private static final int MAX_JD_LENGTH = 6000;
 
     // How many JD-derived terms we add on top of the Job Role when searching Adzuna.

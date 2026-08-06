@@ -20,8 +20,7 @@ function Analyse() {
     const [sug, setsug] = useState([])
     const [jobs, setjobs] = useState([])
 
-    // NEW: Job Role (echoed back) + Job Description support. Job Role behaves exactly
-    // as it always did everywhere else on this page - these are purely additive.
+
     const [jobRole, setjobRole] = useState("")
     const [jobDescription, setjobDescription] = useState("")
     const [jdExperienceLevel, setjdExperienceLevel] = useState("")
@@ -170,8 +169,7 @@ function Analyse() {
                         </div>
                     }
 
-                    {/* NEW: Job Role + Job Description card. Job Role is shown here exactly
-                        as entered - nothing about the existing Job Role behaviour changes. */}
+
                     {(jobRole || jobDescription) &&
                         <div className={Styles.jdCard}>
                             <h2>Target Role</h2>
@@ -185,7 +183,6 @@ function Analyse() {
                         </div>
                     }
 
-                    {/* NEW: structured insights extracted from the Job Description, if one was given. */}
                     {hasJdInsights &&
                         <div className={Styles.jdCard}>
                             <h2>Job Description Insights</h2>
@@ -315,8 +312,7 @@ function Analyse() {
                                 )}
                             </div>
                         }
-                        {/* NEW: meaningful fallback instead of the job section silently disappearing
-                            when Adzuna genuinely found nothing (as opposed to an error). */}
+
                         {jobs.length === 0 && jobSearchMessage &&
                             <div className={Styles.jobs}>
                                 <h2>Suggested Jobs</h2>
