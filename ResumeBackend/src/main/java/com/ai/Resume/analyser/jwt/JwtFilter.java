@@ -77,11 +77,10 @@ public class JwtFilter extends OncePerRequestFilter {
 
         } catch (Exception e) {
 
-            SecurityContextHolder.clearContext();
+                e.printStackTrace();
 
-            System.out.println("JWT Authentication Error : "
-                    + e.getMessage());
-        }
+                SecurityContextHolder.clearContext();
+            }
 
         filterChain.doFilter(request, response);
     }
