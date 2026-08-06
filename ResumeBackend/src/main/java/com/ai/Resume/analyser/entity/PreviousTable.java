@@ -92,31 +92,32 @@ public class PreviousTable {
      */
     private String jdExperienceLevel;
 
-    @ElementCollection
-    @CollectionTable(name = "previous_table_jd_skills", joinColumns = @JoinColumn(name = "previous_table_email"))
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "previous_table_jd_skills",
+            joinColumns = @JoinColumn(name = "previous_table_email"))
     @Column(name = "jd_skill", length = 450)
     @OrderColumn(name = "jd_skill_order")
     private List<String> jdSkills;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "previous_table_jd_technologies", joinColumns = @JoinColumn(name = "previous_table_email"))
     @Column(name = "jd_technology", length = 450)
     @OrderColumn(name = "jd_technology_order")
     private List<String> jdTechnologies;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "previous_table_jd_keywords", joinColumns = @JoinColumn(name = "previous_table_email"))
     @Column(name = "jd_keyword", length = 450)
     @OrderColumn(name = "jd_keyword_order")
     private List<String> jdKeywords;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "previous_table_jd_responsibilities", joinColumns = @JoinColumn(name = "previous_table_email"))
     @Column(name = "jd_responsibility", length = 450)
     @OrderColumn(name = "jd_responsibility_order")
     private List<String> jdResponsibilities;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "previous_table_jd_qualifications", joinColumns = @JoinColumn(name = "previous_table_email"))
     @Column(name = "jd_qualification", length = 450)
     @OrderColumn(name = "jd_qualification_order")
